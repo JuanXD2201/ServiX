@@ -43,6 +43,17 @@ Para el chat con IA, en la consola de Firebase debe estar habilitado **Firebase 
 
 Por completar con los integrantes y roles reales del equipo (Product Owner, Scrum Master, Developers).
 
+## Documentación
+
+| Documento | Contenido |
+|---|---|
+| [docs/ARQUITECTURA.md](docs/ARQUITECTURA.md) | Capas, módulos, DI e integraciones |
+| [docs/FIREBASE.md](docs/FIREBASE.md) | Modelo de datos y reglas de seguridad |
+| [docs/CHAT_IA.md](docs/CHAT_IA.md) | Asistente con Gemini y escalamiento a administrador |
+| [docs/PRUEBAS.md](docs/PRUEBAS.md) | Pruebas ejecutadas y limitaciones |
+| [docs/AUDITORIA.md](docs/AUDITORIA.md) | Hallazgos y correcciones |
+| [docs/AZURE_DEVOPS.md](docs/AZURE_DEVOPS.md) | Scrum, repositorios y pipeline |
+
 ## Contribuir
 
 Consulta [CONTRIBUTING.md](CONTRIBUTING.md).
