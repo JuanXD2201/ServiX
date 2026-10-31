@@ -1,0 +1,48 @@
+# ServiX
+
+Aplicación Android para gestionar servicios técnicos del hogar: clientes, órdenes de servicio, historial, notificaciones y un asistente de chat con IA que puede escalar a un administrador.
+
+## Tecnologías
+
+- Kotlin 2.2, Jetpack Compose y Material 3
+- Arquitectura por capas: UI → ViewModel → UseCase → Repository → Data Source
+- Firebase Authentication y Cloud Firestore (proyecto `servix-453fb`)
+- Firebase AI Logic (Gemini) para el chat: no hay claves de IA en el APK
+- Webhook de Make para eventos de servicio
+- Android Gradle Plugin 9.1, Gradle 9.3.1, `minSdk` 26, `targetSdk` 36
+
+## Requisitos
+
+- JDK 17 o superior
+- Android SDK con la plataforma `android-36.1` (Android Studio la instala al sincronizar)
+- Cuenta con acceso al proyecto Firebase `servix-453fb`
+
+## Ejecución local
+
+1. Clona el repositorio y ábrelo en Android Studio (o usa la línea de comandos).
+2. Verifica que `app/google-services.json` exista (incluido en el repositorio).
+3. Compila: `./gradlew assembleDebug` (Windows: `gradlew.bat assembleDebug`).
+4. El APK queda en `app/build/outputs/apk/debug/`.
+5. Instala en un dispositivo o emulador: `adb install -r app/build/outputs/apk/debug/app-debug.apk`.
+
+Pruebas unitarias: `./gradlew testDebugUnitTest`.
+
+Para el chat con IA, en la consola de Firebase debe estar habilitado **Firebase AI Logic** con el proveedor Gemini Developer API.
+
+## Seguridad
+
+- Las reglas de Firestore están en `firestore.rules` y se despliegan con `firebase deploy --only firestore:rules`.
+- Cada usuario solo accede a su propio árbol `usuarios/{uid}/...`; los administradores se identifican por el campo `role`.
+- No se incluyen contraseñas, claves de firma ni claves de API privadas en el código.
+
+## Integración continua
+
+`azure-pipelines.yml` compila, ejecuta pruebas unitarias y publica el APK debug como artefacto en cada cambio sobre `main`.
+
+## Equipo
+
+Por completar con los integrantes y roles reales del equipo (Product Owner, Scrum Master, Developers).
+
+## Contribuir
+
+Consulta [CONTRIBUTING.md](CONTRIBUTING.md).

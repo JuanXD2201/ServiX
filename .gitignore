@@ -1,0 +1,24 @@
+*.iml
+.gradle/
+.kotlin/
+build/
+local.properties
+/.idea/
+/captures
+.externalNativeBuild
+.cxx
+.DS_Store
+
+# Secretos y firma
+.env
+*.jks
+*.keystore
+debug.keystore
+
+# Material de la asignatura y residuos de herramientas de IA
+GUIA*.pdf
+metadata.json
+.aistudio/
+public/assets/aistudio/
+.firebase/
+firebase-debug.log
