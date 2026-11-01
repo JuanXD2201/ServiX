@@ -25,7 +25,8 @@ Alcance: únicamente el proyecto ServiX. Metodología: inspección del repositor
 | H-18 | P1 | En el inicio de sesión mandaba el rol elegido en pantalla, no el almacenado; un cliente veía la interfaz de administrador | `FirebaseAuthRepository.kt` | **Corregido**: el rol sale de la cuenta; si no coincide se rechaza el acceso |
 | H-19 | P1 | El listener de solicitudes se abría al construir el repositorio, antes del login; con reglas autenticadas habría fallado de forma permanente | `FirebaseAtencionRepository.kt` | **Corregido**: usa `AuthStateListener` |
 | H-20 | P2 | `SignUpUseCase`, `AuthRepository` y `AuthUser` tenían `ADMINISTRADOR` como rol por defecto | `AuthUseCases.kt`, `AuthRepository.kt`, `AuthUser.kt`, `MainViewModel.kt` | **Corregido**: el rol por defecto es `CLIENTE` (mínimo privilegio) |
-| H-16 | P3 | `.env.example` conserva la variable obsoleta `GEMINI_API_KEY` | `.env.example` | Pendiente |
+| H-21 | P2 | El proyecto trata datos personales de clientes (nombre, correo, teléfono, documento) sin autorización ni política de tratamiento, y el repositorio no tiene archivo `LICENSE` | app, repositorio | Pendiente (ver marco legal del SRS) |
+| H-16 | P3 | `.env.example` conserva la variable obsoleta `GEMINI_API_KEY` | `.env.example` | **Corregido**: `.env.example` ya no contiene `GEMINI_API_KEY` |
 
 ## Acciones que requieren al propietario
 

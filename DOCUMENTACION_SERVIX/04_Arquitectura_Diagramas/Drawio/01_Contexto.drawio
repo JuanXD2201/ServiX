@@ -1,1 +1,160 @@
-<mxfile host="app.diagrams.net"><diagram id="d1" name="Contexto del sistema"><mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="620"><root><mxCell id="0"/><mxCell id="1" parent="0"/><mxCell id="2" value="ServiX · Diagrama de contexto" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#FFFFFF;fontColor=#091E42;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="20" y="10" width="1060" height="34" as="geometry"/></mxCell><mxCell id="3" value="Cliente" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#E0F2FE;strokeColor=#0066F5;fontColor=#0B1B36;fontSize=12;" vertex="1" parent="1"><mxGeometry x="110" y="90" width="150" height="100" as="geometry"/></mxCell><mxCell id="4" value="Administrador / Vendedor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#E0F2FE;strokeColor=#0066F5;fontColor=#0B1B36;fontSize=12;" vertex="1" parent="1"><mxGeometry x="110" y="330" width="150" height="100" as="geometry"/></mxCell><mxCell id="5" value="ServiX&lt;br&gt;App Android (Kotlin, Compose, Material 3)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#091E42;strokeColor=#091E42;fontColor=#FFFFFF;fontSize=13;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="420" y="200" width="250" height="130" as="geometry"/></mxCell><mxCell id="6" value="Firebase Authentication&lt;br&gt;(correo y contraseña)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#0066F5;strokeColor=#0066F5;fontColor=#FFFFFF;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="820" y="70" width="230" height="70" as="geometry"/></mxCell><mxCell id="7" value="Cloud Firestore&lt;br&gt;(servix-453fb)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#0066F5;strokeColor=#0066F5;fontColor=#FFFFFF;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="820" y="170" width="230" height="70" as="geometry"/></mxCell><mxCell id="8" value="Firebase AI Logic&lt;br&gt;Gemini 2.5 Flash" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#00A3FF;strokeColor=#00A3FF;fontColor=#06142E;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="820" y="270" width="230" height="70" as="geometry"/></mxCell><mxCell id="9" value="Make (webhook)&lt;br&gt;Eventos de servicio" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#F59E0B;fontColor=#B45309;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="820" y="370" width="230" height="70" as="geometry"/></mxCell><mxCell id="10" value="Azure DevOps&lt;br&gt;Boards, Repos y Pipelines (CI)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F0F7FF;strokeColor=#CBD5E1;fontColor=#0B1B36;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="420" y="480" width="250" height="80" as="geometry"/></mxCell><mxCell id="12" value="usa" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#0066F5;strokeWidth=1.6;fontSize=11;" edge="1" parent="1" source="3" target="5"><mxGeometry relative="1" as="geometry"/></mxCell><mxCell id="13" value="usa" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#0066F5;strokeWidth=1.6;fontSize=11;" edge="1" parent="1" source="4" target="5"><mxGeometry relative="1" as="geometry"/></mxCell><mxCell id="14" value="autentica" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#0066F5;strokeWidth=1.6;fontSize=11;" edge="1" parent="1" source="5" target="6"><mxGeometry relative="1" as="geometry"/></mxCell><mxCell id="15" value="persiste" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#0066F5;strokeWidth=1.6;fontSize=11;" edge="1" parent="1" source="5" target="7"><mxGeometry relative="1" as="geometry"/></mxCell><mxCell id="16" value="consulta" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#0066F5;strokeWidth=1.6;fontSize=11;" edge="1" parent="1" source="5" target="8"><mxGeometry relative="1" as="geometry"/></mxCell><mxCell id="17" value="notifica" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#0066F5;strokeWidth=1.6;fontSize=11;" edge="1" parent="1" source="5" target="9"><mxGeometry relative="1" as="geometry"/></mxCell><mxCell id="18" value="compila y prueba" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#0066F5;strokeWidth=1.6;fontSize=11;dashed=1;" edge="1" parent="1" source="10" target="5"><mxGeometry relative="1" as="geometry"/></mxCell></root></mxGraphModel></diagram></mxfile>
+<mxfile host="app.diagrams.net" agent="ServiX" version="24.7.0" type="device">
+  <diagram id="sx1" name="Contexto del sistema">
+    <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="hdr" value="" style="fillColor=#091E42;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1700" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="hdr2" value="" style="fillColor=#F59E0B;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="84" width="1700" height="4" as="geometry" />
+        </mxCell>
+        <mxCell id="ttl" value="Contexto del sistema" style="text;fontFamily=Arial;html=0;fontSize=26;align=left;verticalAlign=middle;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="14" width="1400" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="sub" value="Actores, sistema ServiX y servicios externos con los que interactúa" style="text;fontFamily=Arial;html=0;fontSize=13;align=left;verticalAlign=middle;fontColor=#BFDBFE;" vertex="1" parent="1">
+          <mxGeometry x="40" y="50" width="1400" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="brand" value="ServiX" style="text;fontFamily=Arial;html=0;fontSize=28;align=right;verticalAlign=middle;fontColor=#00A3FF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="22" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="frule" value="" style="shape=line;strokeColor=#CBD5E1;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="954" width="1620" height="2" as="geometry" />
+        </mxCell>
+        <mxCell id="foot" value="ServiX  |  Contexto del sistema  |  v1.0  |  2026-11-01" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="40" y="960" width="1400" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="pg" value="Diagrama 1 de 11" style="text;fontFamily=Arial;html=0;fontSize=12;align=right;verticalAlign=middle;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="960" width="200" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="cli" value="Cliente" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#E0F2FE;strokeColor=#091E42;strokeWidth=2;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="90" y="295" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="adm" value="Administrador" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#E0F2FE;strokeColor=#091E42;strokeWidth=2;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="90" y="515" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="app" value="ServiX (App Android)" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;swimlane;horizontal=1;startSize=34;fillColor=#091E42;swimlaneFillColor=#F8FAFC;strokeColor=#091E42;strokeWidth=1.5;fontStyle=1;fontSize=14;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="480" y="250" width="340" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="app_t" value="Kotlin · Jetpack Compose · Material 3&#10;&#10;•  Autenticación con dos roles&#10;   (CLIENTE y ADMINISTRADOR)&#10;•  Gestión de clientes y servicios&#10;•  Historial y notificaciones&#10;•  Chat con asistente de IA&#10;•  Solicitudes de atención humana" style="text;fontFamily=Arial;html=0;fontSize=13;align=left;verticalAlign=top;fontColor=#091E42;" vertex="1" parent="app">
+          <mxGeometry x="20" y="46" width="300" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="fb" value="Google Firebase (proyecto de ServiX)" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;swimlane;horizontal=1;startSize=34;fillColor=#E0F2FE;swimlaneFillColor=#F8FAFC;strokeColor=#0066F5;strokeWidth=1.5;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="250" width="520" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="auth" value="Firebase Authentication&#10;Correo y contraseña" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#E0F2FE;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="300" width="440" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="fs" value="Cloud Firestore&#10;usuarios/{uid}/… y solicitudes_atencion&#10;Protegido por firestore.rules" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;shape=cylinder3;boundedLbl=1;size=12;fillColor=#E0F2FE;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="416" width="440" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="ai" value="Firebase AI Logic&#10;Gemini Developer API · gemini-2.5-flash" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#E0F2FE;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="532" width="440" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="make" value="Make (opcional)&#10;Escenario receptor del webhook" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFBEB;strokeColor=#F59E0B;strokeWidth=2;dashed=1;dashPattern=6 4;" vertex="1" parent="1">
+          <mxGeometry x="480" y="116" width="340" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="ret" value="Retell AI · n8n  (reservado)&#10;Interfaces definidas, sin implementación" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFFFF;strokeColor=#94A3B8;strokeWidth=1.5;dashed=1;dashPattern=3 3;fontColor=#64748B;" vertex="1" parent="1">
+          <mxGeometry x="480" y="730" width="340" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="dev" value="Desarrollo y entrega" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;swimlane;horizontal=1;startSize=34;fillColor=#E2E8F0;swimlaneFillColor=#FFFFFF;strokeColor=#64748B;strokeWidth=1.5;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="700" width="520" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="gh" value="GitHub&#10;Repositorio de código" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#F1F5F9;strokeColor=#64748B;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="746" width="220" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="az" value="Azure DevOps&#10;Repos + Pipelines (CI)" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#F1F5F9;strokeColor=#64748B;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="746" width="220" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="Inicia sesión, consulta sus&#10;servicios y usa el chat" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;exitX=1;exitY=0.5;entryX=0;entryY=0.225;" edge="1" parent="1" source="cli" target="app">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="Gestiona clientes y servicios,&#10;atiende escalamientos" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;exitX=1;exitY=0.5;entryX=0;entryY=0.775;" edge="1" parent="1" source="adm" target="app">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="Inicia sesión y&#10;valida el rol" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;exitX=1;exitY=0.245;entryX=0;entryY=0.5;" edge="1" parent="1" source="app" target="auth">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="Lee y escribe datos&#10;(en tiempo real)" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;exitX=1;exitY=0.535;entryX=0;entryY=0.5;" edge="1" parent="1" source="app" target="fs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="Consultas del&#10;chat de IA" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;exitX=1;exitY=0.825;entryX=0;entryY=0.5;" edge="1" parent="1" source="app" target="ai">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="Evento de servicio (webhook HTTPS)" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;dashed=1;dashPattern=6 4;strokeColor=#F59E0B;strokeWidth=2;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="app" target="make">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="Sin implementar" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=open;endFill=0;dashed=1;dashPattern=3 3;strokeColor=#94A3B8;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="app" target="ret">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="gh" target="az">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leg" value="" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFFFF;strokeColor=#CBD5E1;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="864" width="1620" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_t" value="Leyenda" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#475569;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="52" y="868" width="200" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_s0" value="" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#091E42;strokeColor=#091E42;strokeWidth=1.5;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="54" y="901" width="34" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_x0" value="Sistema ServiX" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="96" y="898" width="95" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_s1" value="" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#E0F2FE;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="207" y="901" width="34" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_x1" value="Servicio Firebase" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="249" y="898" width="107" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_s2" value="" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFBEB;strokeColor=#F59E0B;strokeWidth=2;dashed=1;dashPattern=6 4;" vertex="1" parent="1">
+          <mxGeometry x="372" y="901" width="34" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_x2" value="Integración opcional" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="414" y="898" width="123" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_s3" value="" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFFFF;strokeColor=#94A3B8;strokeWidth=1.5;dashed=1;dashPattern=3 3;fontColor=#64748B;" vertex="1" parent="1">
+          <mxGeometry x="553" y="901" width="34" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_x3" value="Reservado (no implementado)" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="595" y="898" width="178" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_s4" value="" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#F1F5F9;strokeColor=#64748B;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="789" y="901" width="34" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_x4" value="Herramienta de desarrollo" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="831" y="898" width="155" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_e5" value="" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1002" y="910" as="sourcePoint" />
+            <mxPoint x="1046" y="910" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg_x5" value="Interacción" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="1054" y="898" width="72" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_e6" value="" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;dashed=1;dashPattern=6 4;strokeColor=#F59E0B;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1142" y="910" as="sourcePoint" />
+            <mxPoint x="1186" y="910" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg_x6" value="Webhook opcional" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="1194" y="898" width="114" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_e7" value="" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=open;endFill=0;dashed=1;dashPattern=3 3;strokeColor=#94A3B8;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1324" y="910" as="sourcePoint" />
+            <mxPoint x="1368" y="910" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg_x7" value="Interfaz reservada" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="1376" y="898" width="110" height="24" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

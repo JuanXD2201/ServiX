@@ -1,31 +1,30 @@
-# Documentación de ServiX (Optativa II)
+# Documentación de ServiX
 
-Documentación académica integral de ServiX, una aplicación Android (Kotlin, Compose, Firebase) para gestionar servicios técnicos.
+Carpeta de entregables del proyecto ServiX (Optativa II, Universidad de San Buenaventura).
+Equipo: Nicolas Quiroz Gomez (Product Owner), Juan Sebastian Garzon Suarez (Scrum Master) y Juan Esteban Olaya Muñoz (Developer).
 
-Equipo ServiX: Juan Esteban Olaya Muñoz (Developer), Nicolas Quiroz Gomez (Product Owner), Juan Sebastian Garzon Suarez (Scrum Master).
+Punto de entrada: `INDICE_DOCUMENTACION.pdf` (o `.docx`) en esta carpeta.
 
-## Carpetas
+## Estructura
 
 | Carpeta | Contenido |
 |---|---|
-| `01_Documentos_IEEE` | SRS, arquitectura, plan e informe de pruebas (DOCX y PDF) |
-| `02_Matrices` | Matriz maestra y matrices individuales (XLSX) |
-| `03_Manuales` | Manuales de usuario, técnico e instalación (DOCX y PDF) |
-| `04_Arquitectura_Diagramas` | 11 diagramas `.drawio` y vistas PNG |
-| `05_Firebase_y_IA` | Documentación de Firebase e IA, diccionario de datos y reglas |
-| `06_Azure_DevOps` | Scrum, pipeline y capturas reales |
-| `07_Pruebas_y_Calidad` | Casos de prueba, informe y resultados JUnit |
-| `08_Presentacion` | Presentación (PPTX y PDF) y guion |
-| `09_Evidencias` | Registro de evidencias disponibles y pendientes |
-| `10_Indice_Documentacion` | Índice completo |
+| `01_Documentos_IEEE` | SRS, arquitectura y diseño, plan e informe de pruebas (DOCX y PDF) |
+| `02_Matrices` | Matrices en Excel (trazabilidad, riesgos, casos, historias, cumplimiento, auditoría) |
+| `03_Manuales` | Manuales técnico, de instalación y de usuario |
+| `04_Arquitectura_Diagramas` | Diagramas (PNG, SVG, PDF, drawio) |
+| `05_Firebase_y_IA` | Documentación de Firebase y de IA |
+| `06_Azure_DevOps` | Gestión en Azure DevOps, evidencias, pipeline y planificación Scrum |
+| `07_Pruebas_y_Calidad` | Casos y resultados de pruebas |
+| `08_Presentacion` | Presentación y guion |
+| `09_Evidencias` | Registro de evidencias y capturas |
+| `10_Indice_Documentacion` | Índice y este archivo |
 
-## Estado de verificación
+## Estado
 
-- 29 pruebas unitarias y Robolectric aprobadas (31/10/2026 local; 01/11/2026 Azure Pipelines); `assembleDebug` exitoso.
-- No ejecutado: pruebas en dispositivo o emulador, Android Lint, pruebas instrumentadas, comunicación real con Gemini.
-- Las capturas de la aplicación están pendientes: requieren ejecutar la app en un dispositivo.
-- Las fechas de Sprint son provisionales.
+- Documentos DOC-01 a DOC-10: versión 1.0, aprobaciones pendientes.
+- Pruebas automatizadas: 29 de 29 aprobadas. No se han ejecutado pruebas en dispositivo, con Firebase y Gemini reales, Make real, Lint ni pruebas instrumentadas.
+- Fechas de los Sprints de Azure DevOps: provisionales.
 
-## Normas
-
-Se usan las estructuras de ISO/IEC/IEEE 29148:2018, IEEE 830-1998, IEEE 1016-2009 e ISO/IEC/IEEE 29119 (2021) como guía. No es una certificación.
+El DOCX incluye tabla de contenido y listas de figuras y tablas basadas en campos de Word: al abrirlo, acepte la actualización de campos.
+Esta carpeta no contiene secretos, claves ni URL de webhook.

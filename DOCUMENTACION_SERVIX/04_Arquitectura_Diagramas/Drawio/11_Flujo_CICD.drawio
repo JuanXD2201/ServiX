@@ -1,1 +1,233 @@
-<mxfile host="app.diagrams.net"><diagram id="d1" name="Flujo CI/CD"><mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1250" pageHeight="520"><root><mxCell id="0"/><mxCell id="1" parent="0"/><mxCell id="2" value="ServiX · Flujo CI/CD (Azure Pipelines)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#FFFFFF;fontColor=#091E42;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="20" y="10" width="1210" height="34" as="geometry"/></mxCell><mxCell id="3" value="Commit o Pull Request hacia main" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E0F2FE;strokeColor=#0066F5;fontColor=#0B1B36;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="30" y="110" width="170" height="100" as="geometry"/></mxCell><mxCell id="4" value="JDK y Android SDK 36.1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#091E42;strokeColor=#091E42;fontColor=#FFFFFF;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="235" y="110" width="170" height="100" as="geometry"/></mxCell><mxCell id="5" value="Caché de Gradle y dependencias" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#091E42;strokeColor=#091E42;fontColor=#FFFFFF;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="440" y="110" width="170" height="100" as="geometry"/></mxCell><mxCell id="6" value="gradlew testDebugUnitTest" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#0066F5;strokeColor=#0066F5;fontColor=#FFFFFF;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="645" y="110" width="170" height="100" as="geometry"/></mxCell><mxCell id="7" value="gradlew assembleDebug" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#0066F5;strokeColor=#0066F5;fontColor=#FFFFFF;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="850" y="110" width="170" height="100" as="geometry"/></mxCell><mxCell id="8" value="Publicar resultados de pruebas y APK" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#D1FAE5;strokeColor=#10B981;fontColor=#065F46;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="1055" y="110" width="170" height="100" as="geometry"/></mxCell><mxCell id="11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#0066F5;strokeWidth=1.6;fontSize=11;" edge="1" parent="1" source="3" target="4"><mxGeometry relative="1" as="geometry"/></mxCell><mxCell id="12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#0066F5;strokeWidth=1.6;fontSize=11;" edge="1" parent="1" source="4" target="5"><mxGeometry relative="1" as="geometry"/></mxCell><mxCell id="13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#0066F5;strokeWidth=1.6;fontSize=11;" edge="1" parent="1" source="5" target="6"><mxGeometry relative="1" as="geometry"/></mxCell><mxCell id="14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#0066F5;strokeWidth=1.6;fontSize=11;" edge="1" parent="1" source="6" target="7"><mxGeometry relative="1" as="geometry"/></mxCell><mxCell id="15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#0066F5;strokeWidth=1.6;fontSize=11;" edge="1" parent="1" source="7" target="8"><mxGeometry relative="1" as="geometry"/></mxCell><mxCell id="9" value="Disparador: ramas main y Pull Requests hacia main. Política de main: un revisor. Pipeline ServiX-CI; run 20261101.3 exitoso (pruebas 100%, artefacto servix-apk-debug).&lt;br&gt;Nota: el YAML del repositorio local usa JDK 17; el PR #2 en Azure lo cambió a JDK 21. No hay despliegue continuo (sin entorno de publicación)." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F0F7FF;strokeColor=#CBD5E1;fontColor=#0B1B36;fontSize=12;fontStyle=0;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="30" y="280" width="1190" height="170" as="geometry"/></mxCell></root></mxGraphModel></diagram></mxfile>
+<mxfile host="app.diagrams.net" agent="ServiX" version="24.7.0" type="device">
+  <diagram id="sx11" name="Flujo de integración continua (CI/CD)">
+    <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1130" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="hdr" value="" style="fillColor=#091E42;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1920" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="hdr2" value="" style="fillColor=#F59E0B;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="84" width="1920" height="4" as="geometry" />
+        </mxCell>
+        <mxCell id="ttl" value="Flujo de integración continua (CI/CD)" style="text;fontFamily=Arial;html=0;fontSize=26;align=left;verticalAlign=middle;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="14" width="1620" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="sub" value="Pull Request → política de rama main → pipeline ServiX-CI → publicación de resultados y APK debug" style="text;fontFamily=Arial;html=0;fontSize=13;align=left;verticalAlign=middle;fontColor=#BFDBFE;" vertex="1" parent="1">
+          <mxGeometry x="40" y="50" width="1620" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="brand" value="ServiX" style="text;fontFamily=Arial;html=0;fontSize=28;align=right;verticalAlign=middle;fontColor=#00A3FF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1680" y="22" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="frule" value="" style="shape=line;strokeColor=#CBD5E1;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1084" width="1840" height="2" as="geometry" />
+        </mxCell>
+        <mxCell id="foot" value="ServiX  |  Flujo de integración continua (CI/CD)  |  v1.0  |  2026-11-01" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1090" width="1620" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="pg" value="Diagrama 11 de 11" style="text;fontFamily=Arial;html=0;fontSize=12;align=right;verticalAlign=middle;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="1680" y="1090" width="200" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="s0" value="Desarrollador crea&#10;rama feature/*" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=100;fillColor=#091E42;strokeColor=#091E42;fontColor=#FFFFFF;fontStyle=1;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="60" y="130" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" value="Commit y push&#10;al repositorio" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFFFF;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="380" y="130" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="Abre Pull Request&#10;hacia main" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFFFF;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="700" y="130" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="Política de rama main&#10;1 revisor mínimo +&#10;validación de build" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#E0F2FE;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="130" width="300" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="f0" value="" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="s0" target="s1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f1" value="" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="s1" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f2" value="" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="s2" target="s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pipe" value="Pipeline ServiX-CI   ·   agente Microsoft-hosted ubuntu-latest   ·   JDK 21   ·   sin secretos" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;swimlane;horizontal=1;startSize=34;fillColor=#E0F2FE;swimlaneFillColor=#F8FAFC;strokeColor=#0066F5;strokeWidth=1.5;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="60" y="290" width="1800" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="a0" value="1  Configurar JDK 21&#10;JavaToolInstaller@0" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFFFF;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="pipe">
+          <mxGeometry x="30" y="60" width="300" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" value="2  Configurar Android SDK&#10;platforms;android-36.1" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFFFF;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="pipe">
+          <mxGeometry x="390" y="60" width="300" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="3  Caché de Gradle&#10;Cache@2" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFFFF;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="pipe">
+          <mxGeometry x="750" y="60" width="300" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" value="4  Permisos de gradlew&#10;chmod +x ./gradlew" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFFFF;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="pipe">
+          <mxGeometry x="1110" y="60" width="300" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" value="5  Resolver dependencias&#10;:app:dependencies" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFFFF;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="pipe">
+          <mxGeometry x="1470" y="60" width="300" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="b0" value="6  Pruebas unitarias&#10;testDebugUnitTest" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFFFF;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="pipe">
+          <mxGeometry x="1470" y="200" width="300" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="b1" value="7  Compilar APK debug&#10;assembleDebug" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFFFF;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="pipe">
+          <mxGeometry x="1110" y="200" width="300" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="b2" value="8  Publicar resultados de pruebas&#10;PublishTestResults@2&#10;condición: succeededOrFailed()" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#DCFCE7;strokeColor=#15803D;strokeWidth=1.5;" vertex="1" parent="pipe">
+          <mxGeometry x="750" y="200" width="300" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="b3" value="9  Publicar APK&#10;PublishBuildArtifacts@1&#10;artefacto servix-apk-debug" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#DCFCE7;strokeColor=#15803D;strokeWidth=1.5;" vertex="1" parent="pipe">
+          <mxGeometry x="390" y="200" width="300" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="pa0" value="" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="a0" target="a1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pa1" value="" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="a1" target="a2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pa2" value="" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="a2" target="a3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pa3" value="" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="a3" target="a4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pab" value="" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="a4" target="b0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pb0" value="" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="b0" target="b1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pb1" value="" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="b1" target="b2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pb2" value="" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="b2" target="b3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="trig" value="dispara el pipeline&#10;(PR hacia main)" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#0066F5;exitX=0.5;exitY=1;entryX=0.616667;entryY=0;" edge="1" parent="1" source="s3" target="pipe">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d1" value="¿Pruebas y&#10;compilación OK?" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rhombus;fillColor=#FFFBEB;strokeColor=#F59E0B;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="450" y="670" width="300" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="d2" value="¿Aprobado por&#10;el revisor?" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rhombus;fillColor=#FFFBEB;strokeColor=#F59E0B;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="860" y="670" width="300" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="mg" value="Completar PR:&#10;merge a main" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFFFF;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="695" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="tm" value="Pipeline se ejecuta&#10;de nuevo en main" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFFFF;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="1590" y="695" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="end" value="APK debug publicado&#10;servix-apk-debug" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=100;fillColor=#091E42;strokeColor=#091E42;fontColor=#FFFFFF;fontStyle=1;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="1590" y="860" width="250" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="fix" value="Corregir el código y&#10;volver a hacer push" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FEE2E2;strokeColor=#B91C1C;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="450" y="870" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="g0" value="" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="b3" target="d1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="g1" value="Sí" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="d1" target="d2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="g2" value="Sí" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="d2" target="mg">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="g3" value="" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="mg" target="tm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="g4" value="" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="tm" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n1" value="No" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;strokeColor=#475569;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="d1" target="fix">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n2" value="Cambios solicitados" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;strokeColor=#475569;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" edge="1" parent="1" source="d2" target="fix">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1010" y="905" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="loop" value="Reintento" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;strokeColor=#475569;exitX=0;exitY=0.5;entryX=0.5;entryY=1;" edge="1" parent="1" source="fix" target="s1">
+          <mxGeometry relative="1" as="geometry" x="-0.75">
+            <Array as="points">
+              <mxPoint x="30" y="905" />
+              <mxPoint x="30" y="250" />
+              <mxPoint x="505" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg" value="" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFFFF;strokeColor=#CBD5E1;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="975" width="1840" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_t" value="Leyenda" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#475569;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="52" y="979" width="200" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_s0" value="" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=100;fillColor=#091E42;strokeColor=#091E42;fontColor=#FFFFFF;fontStyle=1;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="54" y="1012" width="34" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_x0" value="Inicio / fin" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="96" y="1009" width="63" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_s1" value="" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFFFF;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="175" y="1012" width="34" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_x1" value="Actividad / paso de pipeline" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="217" y="1009" width="162" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_s2" value="" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#E0F2FE;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="395" y="1012" width="34" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_x2" value="Política" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="437" y="1009" width="52" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_s3" value="" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#DCFCE7;strokeColor=#15803D;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="505" y="1012" width="34" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_x3" value="Publicación de resultados" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="547" y="1009" width="153" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_s4" value="" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rhombus;fillColor=#FFFBEB;strokeColor=#F59E0B;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="716" y="1012" width="34" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_x4" value="Decisión" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="758" y="1009" width="60" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_s5" value="" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FEE2E2;strokeColor=#B91C1C;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="834" y="1012" width="34" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_x5" value="Corrección" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="876" y="1009" width="72" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_e6" value="" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="964" y="1021" as="sourcePoint" />
+            <mxPoint x="1008" y="1021" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg_x6" value="Flujo" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="1016" y="1009" width="39" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_e7" value="" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#0066F5;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1071" y="1021" as="sourcePoint" />
+            <mxPoint x="1115" y="1021" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg_x7" value="Disparador" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="1123" y="1009" width="73" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_e8" value="" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;strokeColor=#475569;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1212" y="1021" as="sourcePoint" />
+            <mxPoint x="1256" y="1021" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg_x8" value="Retorno / reintento" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="1264" y="1009" width="113" height="24" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

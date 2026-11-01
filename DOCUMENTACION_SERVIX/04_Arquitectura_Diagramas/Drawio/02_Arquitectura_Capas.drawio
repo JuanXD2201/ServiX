@@ -1,1 +1,169 @@
-<mxfile host="app.diagrams.net"><diagram id="d1" name="Arquitectura por capas"><mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="640"><root><mxCell id="0"/><mxCell id="1" parent="0"/><mxCell id="2" value="ServiX · Arquitectura por capas" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#FFFFFF;fontColor=#091E42;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="20" y="10" width="1060" height="34" as="geometry"/></mxCell><mxCell id="3" value="PRESENTACIÓN&lt;br&gt;Screens (Home, Clientes, ClienteDetalle, Servicios, ServicioDetalle, Historial, Perfil, Chat, ClientePortal, Auth)&lt;br&gt;Components · Dialogs · MainViewModel" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#091E42;strokeColor=#091E42;fontColor=#FFFFFF;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="60" y="70" width="980" height="100" as="geometry"/></mxCell><mxCell id="4" value="DOMINIO&lt;br&gt;Casos de uso (clientes, servicios, notificaciones, autenticación, atención, chat IA)&lt;br&gt;Modelos · Interfaces de Repository" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#0066F5;strokeColor=#0066F5;fontColor=#FFFFFF;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="60" y="210" width="980" height="100" as="geometry"/></mxCell><mxCell id="5" value="DATOS · Firebase&lt;br&gt;FirebaseAuth · Cloud Firestore&lt;br&gt;usuarios/{uid}/… y solicitudes_atencion" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E0F2FE;strokeColor=#0066F5;fontColor=#0B1B36;fontSize=12;fontStyle=0;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="60" y="360" width="310" height="110" as="geometry"/></mxCell><mxCell id="6" value="DATOS · IA&lt;br&gt;GeminiAiChatRepository&lt;br&gt;Firebase AI Logic (gemini-2.5-flash)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E0F2FE;strokeColor=#0066F5;fontColor=#0B1B36;fontSize=12;fontStyle=0;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="395" y="360" width="310" height="110" as="geometry"/></mxCell><mxCell id="7" value="DATOS · Red y pruebas&lt;br&gt;OkHttpMakeWebhookRepository&lt;br&gt;Repositorios Mock (en memoria)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E0F2FE;strokeColor=#0066F5;fontColor=#0B1B36;fontSize=12;fontStyle=0;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="730" y="360" width="310" height="110" as="geometry"/></mxCell><mxCell id="8" value="NÚCLEO&lt;br&gt;AppContainer (inyección manual) · Tema Material 3 · Rutas de navegación · Utilidades" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F0F7FF;strokeColor=#CBD5E1;fontColor=#0B1B36;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="60" y="520" width="980" height="80" as="geometry"/></mxCell><mxCell id="10" value="casos de uso" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#0066F5;strokeWidth=1.6;fontSize=11;" edge="1" parent="1" source="3" target="4"><mxGeometry relative="1" as="geometry"/></mxCell><mxCell id="11" value="interfaz" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#0066F5;strokeWidth=1.6;fontSize=11;" edge="1" parent="1" source="4" target="5"><mxGeometry relative="1" as="geometry"/></mxCell><mxCell id="12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#0066F5;strokeWidth=1.6;fontSize=11;" edge="1" parent="1" source="4" target="6"><mxGeometry relative="1" as="geometry"/></mxCell><mxCell id="13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#0066F5;strokeWidth=1.6;fontSize=11;" edge="1" parent="1" source="4" target="7"><mxGeometry relative="1" as="geometry"/></mxCell></root></mxGraphModel></diagram></mxfile>
+<mxfile host="app.diagrams.net" agent="ServiX" version="24.7.0" type="device">
+  <diagram id="sx2" name="Arquitectura por capas">
+    <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1040" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="hdr" value="" style="fillColor=#091E42;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1700" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="hdr2" value="" style="fillColor=#F59E0B;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="84" width="1700" height="4" as="geometry" />
+        </mxCell>
+        <mxCell id="ttl" value="Arquitectura por capas" style="text;fontFamily=Arial;html=0;fontSize=26;align=left;verticalAlign=middle;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="14" width="1400" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="sub" value="Dependencias dirigidas hacia el dominio · Una sola actividad con Jetpack Compose y Material 3" style="text;fontFamily=Arial;html=0;fontSize=13;align=left;verticalAlign=middle;fontColor=#BFDBFE;" vertex="1" parent="1">
+          <mxGeometry x="40" y="50" width="1400" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="brand" value="ServiX" style="text;fontFamily=Arial;html=0;fontSize=28;align=right;verticalAlign=middle;fontColor=#00A3FF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="22" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="frule" value="" style="shape=line;strokeColor=#CBD5E1;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="994" width="1620" height="2" as="geometry" />
+        </mxCell>
+        <mxCell id="foot" value="ServiX  |  Arquitectura por capas  |  v1.0  |  2026-11-01" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1000" width="1400" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="pg" value="Diagrama 2 de 11" style="text;fontFamily=Arial;html=0;fontSize=12;align=right;verticalAlign=middle;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="1000" width="200" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="core" value="Núcleo  (core/)" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;swimlane;horizontal=1;startSize=34;fillColor=#E2E8F0;swimlaneFillColor=#FFFFFF;strokeColor=#64748B;strokeWidth=1.5;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="120" width="290" height="670" as="geometry" />
+        </mxCell>
+        <mxCell id="c1" value="AppContainer&#10;Inyección manual de&#10;dependencias (sin Hilt)" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#091E42;strokeColor=#091E42;strokeWidth=1.5;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="170" width="250" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c2" value="theme&#10;Color · Theme · Type" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#F1F5F9;strokeColor=#64748B;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="60" y="310" width="250" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" value="navigation&#10;AppRoutes · BottomNavItem" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#F1F5F9;strokeColor=#64748B;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="60" y="430" width="250" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="c4" value="utils&#10;Validators · Formatters&#10;ImageUtils · MakeWebhookConfig" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#F1F5F9;strokeColor=#64748B;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="60" y="550" width="250" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c5" value="MainActivity · ServiXApplication&#10;(app/)" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#F1F5F9;strokeColor=#64748B;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="60" y="690" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pres" value="Presentación  (presentation/ · ui/)" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;swimlane;horizontal=1;startSize=34;fillColor=#E0F2FE;swimlaneFillColor=#F8FAFC;strokeColor=#0066F5;strokeWidth=1.5;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="380" y="120" width="900" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="p1" value="Pantallas&#10;Home · Clientes · Servicios&#10;Historial · Perfil · Chat&#10;ClientePortal · AuthScreen" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFFFF;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="pres">
+          <mxGeometry x="20" y="50" width="270" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="p2" value="Componentes y diálogos&#10;Tarjetas, chips, stepper,&#10;formularios, búsqueda global,&#10;centro de notificaciones" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFFFF;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="pres">
+          <mxGeometry x="315" y="50" width="270" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="p3" value="ViewModel&#10;MainViewModel&#10;MainViewModelFactory&#10;AuthUiState" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFFFF;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="pres">
+          <mxGeometry x="610" y="50" width="270" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="dom" value="Dominio  (domain/)" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;swimlane;horizontal=1;startSize=34;fillColor=#E0F2FE;swimlaneFillColor=#F8FAFC;strokeColor=#0066F5;strokeWidth=1.5;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="380" y="360" width="900" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="d1" value="Casos de uso&#10;Clientes · Servicios · Auth&#10;Atención · Notificaciones&#10;Chat IA · Configuración" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#E0F2FE;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="dom">
+          <mxGeometry x="20" y="50" width="270" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="d2" value="Interfaces de repositorio&#10;Auth · Cliente · Servicio&#10;Notificación · Actividad · Atención&#10;Config · AiChat · MakeWebhook" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#E0F2FE;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="dom">
+          <mxGeometry x="315" y="50" width="270" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="d3" value="Modelos&#10;Cliente · Servicio · Notificacion&#10;Actividad · SolicitudAtencion&#10;UserProfile · UserRole · enums" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#E0F2FE;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="dom">
+          <mxGeometry x="610" y="50" width="270" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="dat" value="Datos  (data/)" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;swimlane;horizontal=1;startSize=34;fillColor=#E0F2FE;swimlaneFillColor=#F8FAFC;strokeColor=#0066F5;strokeWidth=1.5;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="380" y="600" width="900" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="t1" value="data/firebase&#10;Firebase*Repository&#10;DTO de Firestore&#10;(Auth y Firestore)" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFFFF;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="dat">
+          <mxGeometry x="20" y="50" width="270" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="t2" value="data/ai · data/network&#10;GeminiAiChatRepository&#10;OkHttpMakeWebhookRepository" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFFFF;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="dat">
+          <mxGeometry x="315" y="50" width="270" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="t3" value="data/mock&#10;Repositorios en memoria:&#10;pruebas y respaldo si Firebase&#10;no se inicializa" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#F1F5F9;strokeColor=#64748B;strokeWidth=1.5;" vertex="1" parent="dat">
+          <mxGeometry x="610" y="50" width="270" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="fbx" value="Firebase&#10;Authentication · Firestore&#10;AI Logic (Gemini)" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#E0F2FE;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="1380" y="600" width="280" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="mk" value="Make (opcional)" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFBEB;strokeColor=#F59E0B;strokeWidth=2;dashed=1;dashPattern=6 4;" vertex="1" parent="1">
+          <mxGeometry x="1380" y="727" width="280" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="flujo" value="Flujo típico:  Screen → MainViewModel → UseCase → Repository (interfaz) → implementación Firebase / OkHttp" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=8;fillColor=#FFFBEB;strokeColor=#F59E0B;strokeWidth=1;fontSize=12;align=left;spacingLeft=10;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="380" y="828" width="900" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" value="usa casos de uso" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;exitX=0.3;exitY=1;entryX=0.3;entryY=0;" edge="1" parent="1" source="pres" target="dom">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="implementa interfaces" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=0;dashed=1;dashPattern=6 4;strokeColor=#0066F5;endSize=10;exitX=0.3;exitY=0;entryX=0.3;entryY=1;" edge="1" parent="1" source="dat" target="dom">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" value="" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;strokeColor=#475569;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="core" target="dom">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" value="SDK Firebase" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#0066F5;exitX=1;exitY=0.342105;entryX=0;entryY=0.590909;" edge="1" parent="1" source="dat" target="fbx">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a5" value="Webhook POST" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;dashed=1;dashPattern=6 4;strokeColor=#F59E0B;strokeWidth=2;exitX=1;exitY=0.836842;entryX=0;entryY=0.5;" edge="1" parent="1" source="dat" target="mk">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leg" value="" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFFFF;strokeColor=#CBD5E1;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="900" width="1620" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_t" value="Leyenda" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#475569;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="52" y="904" width="200" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_s0" value="" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFFFF;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="54" y="937" width="34" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_x0" value="Paquete / módulo" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="96" y="934" width="108" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_s1" value="" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#E0F2FE;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="220" y="937" width="34" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_x1" value="Dominio / servicio externo" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="262" y="934" width="153" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_s2" value="" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#F1F5F9;strokeColor=#64748B;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="431" y="937" width="34" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_x2" value="Soporte / respaldo" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="473" y="934" width="112" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_s3" value="" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFBEB;strokeColor=#F59E0B;strokeWidth=2;dashed=1;dashPattern=6 4;" vertex="1" parent="1">
+          <mxGeometry x="601" y="937" width="34" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_x3" value="Integración opcional" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="643" y="934" width="123" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_e4" value="" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="782" y="946" as="sourcePoint" />
+            <mxPoint x="826" y="946" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg_x4" value="Dependencia directa" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="834" y="934" width="126" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_e5" value="" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=0;dashed=1;dashPattern=6 4;strokeColor=#0066F5;endSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="976" y="946" as="sourcePoint" />
+            <mxPoint x="1020" y="946" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg_x5" value="Implementa interfaz" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="1028" y="934" width="119" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_e6" value="" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;strokeColor=#475569;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1163" y="946" as="sourcePoint" />
+            <mxPoint x="1207" y="946" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg_x6" value="Ensamblaje (DI)" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="1215" y="934" width="100" height="24" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
