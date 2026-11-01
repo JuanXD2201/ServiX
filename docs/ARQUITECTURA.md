@@ -58,6 +58,5 @@ No se usa Hilt ni Koin. `AppContainer` expone los repositorios como singletons p
 ## 6. Limitaciones conocidas de diseño
 
 - `MainViewModel` concentra gran parte del estado de la aplicación (≈25 KB); es candidato a dividirse por funcionalidad.
-- Existe navegación en dos ubicaciones (`core/navigation/AppRoutes.kt` y `ui/navigation/ServixNavigation.kt`); debe consolidarse.
 - `AppContainer` degrada a repositorios simulados si falla la inicialización de Firebase; el comportamiento está registrado en logs, pero la interfaz no lo indica al usuario.
 - La URL del webhook de Make está incluida en el código (`core/utils/MakeWebhookConfig.kt`). Cualquiera con el APK puede extraerla. Para producción debe moverse a un backend.

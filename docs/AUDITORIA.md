@@ -17,7 +17,7 @@ Alcance: únicamente el proyecto ServiX. Metodología: inspección del repositor
 | H-09 | P2 | README de AI Studio con instrucciones incorrectas (clave en `.env`, edición manual de firma) | `README.md` | **Reescrito** |
 | H-10 | P2 | Carpeta sin Git, sin pipeline CI | — | **Corregido**: repositorio, `azure-pipelines.yml` |
 | H-11 | P2 | `AppContainer` cae silenciosamente a repositorios simulados si Firebase falla | `core/di/AppContainer.kt` | Pendiente |
-| H-12 | P2 | Navegación duplicada (`core/navigation` y `ui/navigation`) | — | Pendiente |
+| H-12 | P2 | Navegación duplicada (`core/navigation` y `ui/navigation`) | `ui/navigation/ServixNavigation.kt` | **Corregido**: archivo sin referencias eliminado (compilación verificada) |
 | H-13 | P2 | `RetellAIRepository` y `N8nWebhookRepository` son interfaces sin implementación | `domain/repository` | Pendiente de decisión |
 | H-14 | P2 | Cualquier usuario autenticado podía leer `solicitudes_atencion` | `FirebaseAtencionRepository.kt`, reglas | **Corregido**: el cliente solo consulta y lee sus solicitudes; el administrador, todas. Reglas redesplegadas |
 | H-15 | P2 | El registro permite elegir el rol `ADMINISTRADOR` | `FirebaseAuthRepository.kt` | Pendiente (riesgo documentado) |

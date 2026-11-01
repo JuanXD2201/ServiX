@@ -25,6 +25,8 @@ En la consola de Firebase del proyecto `servix-453fb`:
 
 Sin este paso, el chat responde con el mensaje de error del punto 5.
 
+**Estado (31/10/2026):** Firebase AI Logic está activado en `servix-453fb` con *Gemini Developer API* para la app `com.example.servix`. AI Monitoring quedó desactivado y App Check figura como "No registrada", por lo que no bloquea las solicitudes. Si se registra App Check, la app deberá inicializar su proveedor (por ejemplo, Play Integrity).
+
 ## Cambios respecto a la versión anterior
 
 | Antes | Ahora |
