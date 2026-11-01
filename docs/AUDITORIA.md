@@ -19,8 +19,11 @@ Alcance: únicamente el proyecto ServiX. Metodología: inspección del repositor
 | H-11 | P2 | `AppContainer` cae silenciosamente a repositorios simulados si Firebase falla | `core/di/AppContainer.kt` | Pendiente |
 | H-12 | P2 | Navegación duplicada (`core/navigation` y `ui/navigation`) | — | Pendiente |
 | H-13 | P2 | `RetellAIRepository` y `N8nWebhookRepository` son interfaces sin implementación | `domain/repository` | Pendiente de decisión |
-| H-14 | P2 | Cualquier usuario autenticado puede leer `solicitudes_atencion` | `FirebaseAtencionRepository.kt`, reglas | Pendiente |
+| H-14 | P2 | Cualquier usuario autenticado podía leer `solicitudes_atencion` | `FirebaseAtencionRepository.kt`, reglas | **Corregido**: el cliente solo consulta y lee sus solicitudes; el administrador, todas. Reglas redesplegadas |
 | H-15 | P2 | El registro permite elegir el rol `ADMINISTRADOR` | `FirebaseAuthRepository.kt` | Pendiente (riesgo documentado) |
+| H-17 | P1 | Si fallaba la lectura del rol, el usuario quedaba como `ADMINISTRADOR`; el DTO tenía `ADMINISTRADOR` por defecto | `FirebaseAuthRepository.kt`, `FirestoreDtos.kt` | **Corregido**: mínimo privilegio (`CLIENTE`) |
+| H-18 | P1 | En el inicio de sesión mandaba el rol elegido en pantalla, no el almacenado; un cliente veía la interfaz de administrador | `FirebaseAuthRepository.kt` | **Corregido**: el rol sale de la cuenta; si no coincide se rechaza el acceso |
+| H-19 | P1 | El listener de solicitudes se abría al construir el repositorio, antes del login; con reglas autenticadas habría fallado de forma permanente | `FirebaseAtencionRepository.kt` | **Corregido**: usa `AuthStateListener` |
 | H-16 | P3 | `.env.example` conserva la variable obsoleta `GEMINI_API_KEY` | `.env.example` | Pendiente |
 
 ## Acciones que requieren al propietario

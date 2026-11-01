@@ -55,9 +55,12 @@ service cloud.firestore {
 
     // --- Solicitudes de atención (chat IA -> administrador) ---
     match /solicitudes_atencion/{solicitudId} {
-      allow read: if isSignedIn();
+      // Cada cliente solo ve sus solicitudes; el administrador ve todas.
+      allow read: if isAdmin()
+        || (isSignedIn() && resource.data.clienteId == request.auth.uid);
 
       allow create: if isSignedIn()
+        && request.resource.data.clienteId == request.auth.uid
         && isShortString(request.resource.data.clienteId, 128)
         && isShortString(request.resource.data.clienteNombre, 200)
         && isShortString(request.resource.data.motivo, 500)

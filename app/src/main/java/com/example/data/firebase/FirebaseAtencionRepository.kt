@@ -5,7 +5,9 @@ import com.example.data.firebase.dto.SolicitudAtencionDto
 import com.example.domain.model.EstadoAtencion
 import com.example.domain.model.PrioridadAtencion
 import com.example.domain.model.SolicitudAtencion
+import com.example.domain.model.UserRole
 import com.example.domain.repository.AtencionRepository
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.Query
@@ -29,24 +31,45 @@ class FirebaseAtencionRepository(
     private val collectionRef = firestore.collection("solicitudes_atencion")
 
     init {
-        listenToSolicitudes()
+        // La escucha depende de la sesión: las reglas exigen usuario autenticado.
+        FirebaseAuth.getInstance().addAuthStateListener { firebaseAuth ->
+            val user = firebaseAuth.currentUser
+            if (user != null) {
+                listenToSolicitudes(user.uid)
+            } else {
+                listenerRegistration?.remove()
+                listenerRegistration = null
+                _solicitudes.value = emptyList()
+            }
+        }
     }
 
-    private fun listenToSolicitudes() {
+    private fun listenToSolicitudes(uid: String) {
         listenerRegistration?.remove()
-        listenerRegistration = collectionRef
-            .orderBy("fechaHora", Query.Direction.DESCENDING)
-            .addSnapshotListener { snapshot, error ->
-                if (error != null) {
-                    Log.e("FirebaseAtencionRepo", "Error listening to solicitudes", error)
-                    return@addSnapshotListener
+        listenerRegistration = null
+        // Los administradores ven todas las solicitudes; los clientes solo las suyas.
+        firestore.collection("usuarios").document(uid).get()
+            .addOnSuccessListener { doc ->
+                val role = UserRole.fromString(doc.getString("role"))
+                val query: Query = if (role == UserRole.ADMINISTRADOR) {
+                    collectionRef
+                } else {
+                    collectionRef.whereEqualTo("clienteId", uid)
                 }
-                if (snapshot != null) {
-                    val list = snapshot.documents.mapNotNull { doc ->
-                        doc.toObject(SolicitudAtencionDto::class.java)?.toDomain()
+                listenerRegistration = query.addSnapshotListener { snapshot, error ->
+                    if (error != null) {
+                        Log.e("FirebaseAtencionRepo", "Error listening to solicitudes", error)
+                        return@addSnapshotListener
                     }
-                    _solicitudes.value = list
+                    if (snapshot != null) {
+                        _solicitudes.value = snapshot.documents
+                            .mapNotNull { it.toObject(SolicitudAtencionDto::class.java)?.toDomain() }
+                            .sortedByDescending { it.fechaHora }
+                    }
                 }
+            }
+            .addOnFailureListener { e ->
+                Log.e("FirebaseAtencionRepo", "No se pudo leer el rol del usuario", e)
             }
     }
 

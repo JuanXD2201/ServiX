@@ -22,8 +22,8 @@ Prueba instrumentada: `app/src/androidTest/.../ExampleInstrumentedTest.kt` (requ
 | Verificación | Comando | Resultado | Evidencia |
 |---|---|---|---|
 | Compilación de fuentes y pruebas (antes de los cambios) | `gradlew testDebugUnitTest` | Compiló (`compileDebugUnitTestKotlin` OK); la ejecución se interrumpió por falta de memoria del equipo | Registro local |
-| Compilación debug tras los cambios | `gradlew :app:assembleDebug` | **Pendiente de registrar** | — |
-| Pruebas unitarias | `gradlew testDebugUnitTest` | **Pendiente de registrar** | — |
+| Compilación debug tras los cambios | `gradlew :app:assembleDebug` | **Exitosa** (BUILD SUCCESSFUL, 20 min 21 s, tras los cambios de roles y solicitudes) | Registro local de Gradle |
+| Pruebas unitarias | `gradlew testDebugUnitTest` | **Exitosas: 29 pruebas, 0 fallos, 0 errores, 0 omitidas** | Informes JUnit XML en `app/build/test-results/testDebugUnitTest` |
 | Android Lint | `gradlew lintDebug` | No ejecutado | — |
 | Chat IA contra Gemini | Manual en dispositivo | No ejecutado | — |
 | Navegación, formularios y estados en UI | Manual en dispositivo | No ejecutado | — |

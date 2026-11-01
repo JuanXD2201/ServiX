@@ -33,7 +33,7 @@ Archivo: `firestore.rules`. Desplegadas en el proyecto `servix-453fb` con `fireb
 |---|---|---|
 | `usuarios/{uid}` | Dueño o administrador | Creación: solo el dueño, con `role` ∈ {`CLIENTE`, `ADMINISTRADOR`}. Actualización: dueño sin cambiar `role`, o administrador. Borrado: nadie |
 | `usuarios/{uid}/{subcolección}/*` | Dueño o administrador | Dueño o administrador; solo subcolecciones listadas |
-| `solicitudes_atencion/{id}` | Usuario autenticado | Creación: autenticado con campos de texto acotados. Actualización y borrado: administrador |
+| `solicitudes_atencion/{id}` | Administrador, o el cliente dueño (`clienteId == uid`) | Creación: autenticado con `clienteId == uid` y textos acotados. Actualización y borrado: administrador |
 | Cualquier otra ruta | Denegada | Denegada |
 
 Una versión anterior permitía lectura y escritura sin autenticación en todo el proyecto (`|| true` en cada regla). Fue sustituida y las colecciones raíz heredadas (`clientes`, `servicios`, `notificaciones`, `actividades`, `configuracion`) quedaron bloqueadas porque el código no las utiliza.
@@ -41,8 +41,7 @@ Una versión anterior permitía lectura y escritura sin autenticación en todo e
 ### Riesgos residuales
 
 1. **Autoasignación de rol.** El registro permite elegir `ADMINISTRADOR`. Para producción, la asignación debe hacerse con un claim de administrador (Admin SDK o Cloud Function).
-2. **Solicitudes visibles entre usuarios.** Cualquier usuario autenticado puede leer `solicitudes_atencion`, porque el repositorio escucha la colección completa. Corregir requiere filtrar por cliente en la consulta y restringir la regla.
-3. **App Check** no está activado.
+2. **App Check** no está activado.
 
 ## Cómo desplegar las reglas
 

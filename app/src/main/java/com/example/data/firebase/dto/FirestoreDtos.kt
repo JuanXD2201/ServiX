@@ -19,7 +19,7 @@ data class UsuarioDto(
     val displayName: String = "",
     val phone: String = "",
     val photoUrl: String? = null,
-    val role: String = "ADMINISTRADOR",
+    val role: String = "CLIENTE",
     val createdAt: Long = System.currentTimeMillis()
 ) {
     fun toDomain(): AuthUser = AuthUser(

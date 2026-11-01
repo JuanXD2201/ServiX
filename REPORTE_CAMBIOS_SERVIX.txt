@@ -708,3 +708,94 @@ Archivos modificados:
 
 Estado: COMPLETADO
 ============================================================
+CAMBIO #024
+Día: Sábado
+Fecha: 31/10/2026
+Hora: 19:50
+Fase: Auditoría de seguridad (P0)
+Módulo: Firestore (firestore.rules, firebase.json, .firebaserc)
+Tipo: Corrección de seguridad
+Problema detectado: Reglas abiertas (`|| true` en cada regla y comodín /{document=**}).
+Modificación: Reglas reescritas con acceso por dueño o administrador, rol inmutable y denegación por defecto; desplegadas en el proyecto servix-453fb con Firebase CLI. Segundo despliegue: solicitudes_atencion legible solo por el cliente dueño o el administrador.
+Justificación: Cualquier persona con el ID del proyecto podía leer y escribir todos los datos.
+Pruebas: Compilación de reglas por Firebase CLI sin errores. No se probó con datos reales (la base estaba vacía).
+Estado: COMPLETADO
+============================================================
+CAMBIO #025
+Día: Sábado
+Fecha: 31/10/2026
+Hora: 19:50
+Fase: Chat con IA (P0)
+Módulo: data/ai/GeminiAiChatRepository.kt, app/build.gradle.kts
+Tipo: Corrección de seguridad y funcionalidad
+Problema detectado: Clave GEMINI_API_KEY empaquetada en el APK y enviada en la URL; respuestas predefinidas presentadas como IA cuando fallaba la API.
+Modificación: Migración a Firebase AI Logic (Gemini Developer API, modelo gemini-2.5-flash); se retiró el plugin secrets y la clave de BuildConfig; los errores se propagan sin simular respuestas.
+Justificación: Una clave en el cliente es extraíble; un fallback simulado oculta fallos reales.
+Pruebas: Compilación y pruebas unitarias exitosas. Comunicación real con Gemini NO verificada (requiere Firebase AI Logic habilitado y un dispositivo).
+Estado: PARCIAL (verificación pendiente)
+============================================================
+CAMBIO #026
+Día: Sábado
+Fecha: 31/10/2026
+Hora: 19:50
+Fase: Auditoría de seguridad y autenticación (P1)
+Módulo: data/firebase/FirebaseAuthRepository.kt, dto/FirestoreDtos.kt, ui/screens/AuthScreen.kt
+Tipo: Corrección
+Problema detectado: Si fallaba la lectura del rol el usuario quedaba como ADMINISTRADOR; el DTO usaba ADMINISTRADOR por defecto; el inicio de sesión aceptaba el rol elegido en pantalla; atajos con credenciales demo/admin en el código.
+Modificación: Mínimo privilegio (CLIENTE por defecto y ante error); el rol sale de la cuenta almacenada y se rechaza el acceso si no coincide con el perfil elegido; los atajos de prueba solo se muestran en builds debug.
+Justificación: Evitar escalada de privilegios y credenciales utilizables en producción.
+Pruebas: Compilación y 29 pruebas unitarias exitosas (0 fallos). Flujo de inicio de sesión no probado en dispositivo.
+Estado: COMPLETADO (verificación manual pendiente)
+============================================================
+CAMBIO #027
+Día: Sábado
+Fecha: 31/10/2026
+Hora: 19:50
+Fase: Datos
+Módulo: data/firebase/FirebaseAtencionRepository.kt
+Tipo: Corrección funcional y de seguridad
+Problema detectado: El listener de solicitudes se abría al construir el repositorio, antes del inicio de sesión, y leía toda la colección.
+Modificación: Escucha mediante AuthStateListener; los administradores leen todas las solicitudes y los clientes solo las propias (consulta filtrada por clienteId).
+Justificación: Compatibilidad con las reglas nuevas y privacidad entre clientes.
+Pruebas: Compilación y pruebas unitarias exitosas; no probado contra Firestore real.
+Estado: COMPLETADO (verificación manual pendiente)
+============================================================
+CAMBIO #028
+Día: Sábado
+Fecha: 31/10/2026
+Hora: 19:50
+Fase: Build y configuración
+Módulo: gradlew, gradlew.bat, gradle/wrapper, app/build.gradle.kts, .gitignore
+Tipo: Corrección
+Problema detectado: Faltaban gradlew y gradle-wrapper.jar; la firma debug dependía de un debug.keystore inexistente y excluido de Git.
+Modificación: Wrapper generado (Gradle 9.3.1); firma debug estándar de Android; .gitignore ampliado (secretos, firma, residuos de IA).
+Justificación: El proyecto no compilaba en un equipo limpio.
+Pruebas: assembleDebug y testDebugUnitTest: BUILD SUCCESSFUL.
+Estado: COMPLETADO
+============================================================
+CAMBIO #029
+Día: Sábado
+Fecha: 31/10/2026
+Hora: 19:50
+Fase: Limpieza y documentación
+Módulo: raíz del proyecto, README.md, CONTRIBUTING.md, docs/
+Tipo: Mantenimiento
+Problema detectado: 29 scripts .py generados por IA en la raíz; README de AI Studio con instrucciones incorrectas; sin documentación técnica.
+Modificación: Scripts archivados fuera del proyecto (carpeta Servix_archivo_scripts_IA, sin borrarlos); README y CONTRIBUTING reescritos; documentos ARQUITECTURA, FIREBASE, CHAT_IA, PRUEBAS, AUDITORIA y AZURE_DEVOPS.
+Justificación: Documentación alineada con el código real.
+Pruebas: Revisión manual contra el código.
+Estado: COMPLETADO
+============================================================
+CAMBIO #030
+Día: Sábado
+Fecha: 31/10/2026
+Hora: 19:50
+Fase: Control de versiones y Azure DevOps
+Módulo: Git, GitHub, azure-pipelines.yml, Azure DevOps (organización Serivx)
+Tipo: Configuración
+Problema detectado: Carpeta sin Git, sin pipeline y sin gestión Scrum.
+Modificación: Repositorio privado JuanXD2201/ServiX con ramas main y develop; azure-pipelines.yml; en Azure DevOps: proyecto ServiX privado (proceso Scrum), 3 sprints con fechas provisionales, 12 PBIs con 27 tareas y 6 bugs, dashboard con 6 widgets.
+Justificación: Requisitos de la guía de Optativa II.
+Pruebas: Verificación por la API de Azure DevOps. Pipeline NO ejecutado; Azure Repos sin código (push pendiente de autenticación del usuario).
+Estado: PARCIAL
+============================================================

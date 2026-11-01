@@ -61,7 +61,9 @@ class FirebaseAuthRepository(
             val roleStr = doc.getString("role")
             UserRole.fromString(roleStr)
         } catch (e: Exception) {
-            UserRole.ADMINISTRADOR
+            // Mínimo privilegio: si no se puede leer el rol, se trata como cliente.
+            Log.w("FirebaseAuthRepo", "No se pudo leer el rol; se asume CLIENTE", e)
+            UserRole.CLIENTE
         }
     }
 
@@ -81,7 +83,14 @@ class FirebaseAuthRepository(
             val firebaseUser = result.user ?: return@withContext AuthResult.Error("No se pudo obtener el usuario")
             
             val storedRole = fetchUserRole(firebaseUser.uid)
-            val finalRole = requestedRole ?: storedRole
+            if (requestedRole != null && requestedRole != storedRole) {
+                // El rol lo define la cuenta almacenada, nunca la selección de la pantalla.
+                auth.signOut()
+                return@withContext AuthResult.Error(
+                    "Esta cuenta está registrada como ${storedRole.name.lowercase()}. Selecciona el perfil correcto."
+                )
+            }
+            val finalRole = storedRole
 
             val user = AuthUser(
                 uid = firebaseUser.uid,
