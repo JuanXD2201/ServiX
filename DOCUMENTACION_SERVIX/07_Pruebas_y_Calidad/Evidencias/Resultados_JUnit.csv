@@ -1,0 +1,30 @@
+﻿Clase;Prueba;Resultado;Tiempo (s);Marca de tiempo del informe (UTC)
+com.example.ExampleRobolectricTest;main activity launches without crash;Aprobado;277,743;2026-11-01T00:35:15
+com.example.ExampleRobolectricTest;read string from context;Aprobado;0,301;2026-11-01T00:35:15
+com.example.ExampleUnitTest;addition_isCorrect;Aprobado;0,0;2026-11-01T00:40:00
+com.example.GreetingScreenshotTest;greeting_screenshot;Aprobado;110,551;2026-11-01T00:40:00
+com.example.ServixAtencionUnitTests;testResolverSolicitud;Aprobado;0,03;2026-11-01T00:41:54
+com.example.ServixAtencionUnitTests;testTomarSolicitudPorAdmin;Aprobado;0,001;2026-11-01T00:41:54
+com.example.ServixAtencionUnitTests;testResponderSolicitudPorAdmin;Aprobado;0,001;2026-11-01T00:41:54
+com.example.ServixAtencionUnitTests;testCrearSolicitudAtencion;Aprobado;0,001;2026-11-01T00:41:54
+com.example.ServixAuthUnitTests;testSignInValidationFailsOnShortPassword;Aprobado;0,156;2026-11-01T00:41:54
+com.example.ServixAuthUnitTests;testSignUpSuccess;Aprobado;0,032;2026-11-01T00:41:54
+com.example.ServixAuthUnitTests;testSignOut;Aprobado;0,014;2026-11-01T00:41:54
+com.example.ServixAuthUnitTests;testSignInSuccess;Aprobado;0,006;2026-11-01T00:41:54
+com.example.ServixAuthUnitTests;testInitialUserAuthenticatedInMock;Aprobado;0,0;2026-11-01T00:41:54
+com.example.ServixMakeIntegrationTest;testAddServicioDispatchesMakeWebhook;Aprobado;0,139;2026-11-01T00:41:54
+com.example.ServixMakeIntegrationTest;testUpdateServicioCompletadoDispatchesMakeWebhook;Aprobado;0,003;2026-11-01T00:41:54
+com.example.ServixMakeIntegrationTest;testUpdateServicioEstadoCompletadoDispatchesMakeWebhook;Aprobado;0,005;2026-11-01T00:41:54
+com.example.ServixRepositoryTest;testAddAndUpdateServicioStatus;Aprobado;10,246;2026-11-01T00:41:54
+com.example.ServixRepositoryTest;testInitialDataLoaded;Aprobado;0,11;2026-11-01T00:41:54
+com.example.ServixRepositoryTest;testAddAndGetCliente;Aprobado;0,204;2026-11-01T00:41:54
+com.example.ServixRobolectricTest;testNavigationToClientes;Aprobado;15,007;2026-11-01T00:42:06
+com.example.ServixRobolectricTest;testNavigationToServicios;Aprobado;2,056;2026-11-01T00:42:06
+com.example.ServixRobolectricTest;testAppLaunchAndDisplayHome;Aprobado;0,973;2026-11-01T00:42:06
+com.example.ServixRobolectricTest;testNavigationToHistorial;Aprobado;1,786;2026-11-01T00:42:06
+com.example.ServixRobolectricTest;testNavigationToPerfil;Aprobado;1,921;2026-11-01T00:42:06
+com.example.ServixUnitTests;testAddAndChangeStatusServicio;Aprobado;0,002;2026-11-01T00:42:28
+com.example.ServixUnitTests;testInitialDataLoaded;Aprobado;0,001;2026-11-01T00:42:28
+com.example.ServixUnitTests;testDeleteClienteCascade;Aprobado;0,001;2026-11-01T00:42:28
+com.example.ServixUnitTests;testClienteInitials;Aprobado;0,003;2026-11-01T00:42:28
+com.example.ServixUnitTests;testAddCliente;Aprobado;0,002;2026-11-01T00:42:28
