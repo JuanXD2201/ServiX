@@ -41,7 +41,7 @@ steps:
   - script: chmod +x ./gradlew
     displayName: Permisos de gradlew
 
-  - script: ./gradlew --no-daemon dependencies --configuration debugRuntimeClasspath -q > /dev/null
+  - script: ./gradlew --no-daemon :app:dependencies --configuration debugRuntimeClasspath -q > /dev/null
     displayName: Resolver dependencias
 
   - script: ./gradlew --no-daemon testDebugUnitTest
