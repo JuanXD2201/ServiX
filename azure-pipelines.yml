@@ -18,9 +18,9 @@ variables:
 
 steps:
   - task: JavaToolInstaller@0
-    displayName: Configurar JDK 17
+    displayName: Configurar JDK 21
     inputs:
-      versionSpec: '17'
+      versionSpec: '21'
       jdkArchitectureOption: x64
       jdkSourceOption: PreInstalled
 
