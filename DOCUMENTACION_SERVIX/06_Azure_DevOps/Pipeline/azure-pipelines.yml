@@ -1,0 +1,64 @@
+# Pipeline CI de ServiX (Android, Kotlin + Compose).
+# Se ejecuta en cada cambio sobre main y en Pull Requests hacia main.
+trigger:
+  branches:
+    include:
+      - main
+
+pr:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  GRADLE_USER_HOME: $(Pipeline.Workspace)/.gradle
+
+steps:
+  - task: JavaToolInstaller@0
+    displayName: Configurar JDK 21
+    inputs:
+      versionSpec: '21'
+      jdkArchitectureOption: x64
+      jdkSourceOption: PreInstalled
+
+  - script: |
+      echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
+      yes | "$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
+      "$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager" "platforms;android-36.1" "build-tools;36.0.0"
+    displayName: Configurar Android SDK
+
+  - task: Cache@2
+    displayName: Cache de Gradle
+    inputs:
+      key: 'gradle | "$(Agent.OS)" | **/*.gradle.kts | gradle/libs.versions.toml | gradle/wrapper/gradle-wrapper.properties'
+      restoreKeys: |
+        gradle | "$(Agent.OS)"
+      path: $(GRADLE_USER_HOME)
+
+  - script: chmod +x ./gradlew
+    displayName: Permisos de gradlew
+
+  - script: ./gradlew --no-daemon :app:dependencies --configuration debugRuntimeClasspath -q > /dev/null
+    displayName: Resolver dependencias
+
+  - script: ./gradlew --no-daemon testDebugUnitTest
+    displayName: Pruebas unitarias
+
+  - script: ./gradlew --no-daemon assembleDebug
+    displayName: Compilar APK debug
+
+  - task: PublishTestResults@2
+    displayName: Publicar resultados de pruebas
+    condition: succeededOrFailed()
+    inputs:
+      testResultsFormat: JUnit
+      testResultsFiles: '**/build/test-results/testDebugUnitTest/*.xml'
+
+  - task: PublishBuildArtifacts@1
+    displayName: Publicar APK
+    inputs:
+      PathtoPublish: app/build/outputs/apk/debug
+      ArtifactName: servix-apk-debug
