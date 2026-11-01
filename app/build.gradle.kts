@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
@@ -5,6 +7,13 @@ plugins {
     alias(libs.plugins.roborazzi)
     alias(libs.plugins.google.services)
 }
+
+// URL del webhook de Make: no se versiona. Se define en local.properties
+// (make.webhook.url=...) o en la variable de entorno MAKE_WEBHOOK_URL.
+val makeWebhookUrl: String = Properties().apply {
+    val f = rootProject.file("local.properties")
+    if (f.exists()) f.inputStream().use { load(it) }
+}.getProperty("make.webhook.url") ?: System.getenv("MAKE_WEBHOOK_URL") ?: ""
 
 android {
     namespace = "com.example"
@@ -20,6 +29,7 @@ android {
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
+        buildConfigField("String", "MAKE_WEBHOOK_URL", "\"$makeWebhookUrl\"")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

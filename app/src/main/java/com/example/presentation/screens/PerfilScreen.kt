@@ -571,7 +571,7 @@ fun PerfilScreen(
         Spacer(modifier = Modifier.height(10.dp))
 
         Text(
-          text = "Webhook activo: webhook.invalid/make",
+          text = if (com.example.core.utils.MakeWebhookConfig.isConfigured) "Integración con Make: activa" else "Integración con Make: no configurada",
           style = MaterialTheme.typography.bodySmall.copy(fontSize = 11.sp),
           color = MaterialTheme.colorScheme.onSurfaceVariant
         )

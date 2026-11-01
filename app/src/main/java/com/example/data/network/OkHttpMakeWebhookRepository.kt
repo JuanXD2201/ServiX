@@ -22,8 +22,12 @@ import java.util.Locale
 import java.util.concurrent.TimeUnit
 
 class OkHttpMakeWebhookRepository(
-    private val webhookUrl: String = MakeWebhookConfig.DEFAULT_WEBHOOK_URL
+    private val webhookUrl: String = MakeWebhookConfig.WEBHOOK_URL
 ) : MakeWebhookRepository {
+
+    private companion object {
+        const val SIN_CORREO = "sin-correo@servix.invalid"
+    }
 
     private val client = OkHttpClient.Builder()
         .connectTimeout(15, TimeUnit.SECONDS)
@@ -43,7 +47,7 @@ class OkHttpMakeWebhookRepository(
         val userAuthEmail = try { FirebaseAuth.getInstance().currentUser?.email } catch (e: Throwable) { null }
         val effectiveEmail = cliente?.correo?.trim().takeIf { !it.isNullOrBlank() }
             ?: userAuthEmail?.takeIf { it.isNotBlank() }
-            ?: "sin-correo@servix.invalid"
+            ?: SIN_CORREO
 
         return JSONObject().apply {
             put("evento", evento)
@@ -67,7 +71,7 @@ class OkHttpMakeWebhookRepository(
             put("usuarioId", usuarioId ?: "usuario-servix")
             put("tecnicoNombre", tecnico?.nombre ?: "Carlos Alberto Vega")
             put("tecnicoEmpresa", tecnico?.empresa ?: "Vega Servicios Técnicos")
-            put("tecnicoCorreo", userAuthEmail ?: "sin-correo@servix.invalid")
+            put("tecnicoCorreo", userAuthEmail ?: SIN_CORREO)
             put("correoNotificacion", effectiveEmail)
         }
     }
@@ -79,6 +83,10 @@ class OkHttpMakeWebhookRepository(
         tecnico: UserProfile?,
         usuarioId: String?
     ) {
+        if (webhookUrl.isBlank()) {
+            Log.w("MakeWebhook", "Webhook de Make no configurado; evento $evento omitido")
+            return
+        }
         scope.launch {
             try {
                 val json = buildPayload(evento, servicio, cliente, tecnico, usuarioId)
@@ -105,6 +113,9 @@ class OkHttpMakeWebhookRepository(
         tecnico: UserProfile?,
         usuarioId: String?
     ): Result<String> = withContext(Dispatchers.IO) {
+        if (webhookUrl.isBlank()) {
+            return@withContext Result.failure(IllegalStateException("Webhook de Make no configurado"))
+        }
         try {
             val json = buildPayload(evento, servicio, cliente, tecnico, usuarioId)
             val mediaType = "application/json; charset=utf-8".toMediaType()

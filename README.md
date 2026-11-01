@@ -29,6 +29,8 @@ Pruebas unitarias: `./gradlew testDebugUnitTest`.
 
 Para el chat con IA, en la consola de Firebase debe estar habilitado **Firebase AI Logic** con el proveedor Gemini Developer API.
 
+Integración opcional con Make: define `make.webhook.url=<URL del webhook>` en `local.properties` (o la variable de entorno `MAKE_WEBHOOK_URL`) antes de compilar. Sin esa URL, los eventos de servicio no se envían y la app funciona con normalidad.
+
 ## Seguridad
 
 - Las reglas de Firestore están en `firestore.rules` y se despliegan con `firebase deploy --only firestore:rules`.
@@ -41,7 +43,11 @@ Para el chat con IA, en la consola de Firebase debe estar habilitado **Firebase 
 
 ## Equipo
 
-Por completar con los integrantes y roles reales del equipo (Product Owner, Scrum Master, Developers).
+| Integrante | Rol Scrum |
+|---|---|
+| Nicolas Quiroz Gomez | Product Owner |
+| Juan Sebastian Garzon Suarez | Scrum Master |
+| Juan Esteban Olaya Muñoz | Developer |
 
 ## Documentación
 
