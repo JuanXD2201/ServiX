@@ -22,7 +22,7 @@ class SignUpUseCase(private val authRepository: AuthRepository) {
         email: String,
         password: String,
         phone: String = "",
-        role: UserRole = UserRole.ADMINISTRADOR
+        role: UserRole = UserRole.CLIENTE
     ): AuthResult {
         if (name.isBlank()) {
             return AuthResult.Error("El nombre completo es obligatorio")

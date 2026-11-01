@@ -334,7 +334,7 @@ class MainViewModel(
         email: String,
         pass: String,
         phone: String = "",
-        role: UserRole = UserRole.ADMINISTRADOR,
+        role: UserRole = UserRole.CLIENTE,
         onSuccess: () -> Unit = {}
     ) {
         viewModelScope.launch {
