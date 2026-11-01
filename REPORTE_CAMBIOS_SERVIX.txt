@@ -799,3 +799,29 @@ Justificación: Requisitos de la guía de Optativa II.
 Pruebas: Verificación por la API de Azure DevOps. Pipeline NO ejecutado; Azure Repos sin código (push pendiente de autenticación del usuario).
 Estado: PARCIAL
 ============================================================
+CAMBIO #031
+Día: Domingo
+Fecha: 01/11/2026
+Hora: 11:14
+Fase: Seguridad y publicación
+Módulo: webhook de Make, correos, contraseñas demo, historial de Git
+Tipo: Corrección de seguridad
+Problema detectado: URL del webhook de Make, correo personal y contraseñas demo en el código y en el historial de commits; correo institucional como autor de los commits.
+Modificación: La URL pasa a local.properties o MAKE_WEBHOOK_URL (sin ella la integración queda desactivada); se eliminaron el correo personal y las contraseñas; el historial se reescribió con git-filter-repo y el repositorio de GitHub se recreó con ese historial y autores con el correo noreply de GitHub. El historial original se conserva en el repositorio local y en Azure Repos (privados).
+Justificación: Permitir un repositorio público sin exponer secretos ni datos personales.
+Pruebas: compilación y 29 pruebas unitarias exitosas tras la limpieza; escaneo del historial sin coincidencias.
+Estado: COMPLETADO (se recomienda rotar el webhook de Make porque estuvo en el APK y en repositorios privados)
+============================================================
+CAMBIO #032
+Día: Domingo
+Fecha: 01/11/2026
+Hora: 11:14
+Fase: Documentación integral
+Módulo: DOCUMENTACION_SERVIX/ (01_Documentos_IEEE, 02_Matrices, 03_Manuales, 04_Arquitectura_Diagramas, 05_Firebase_y_IA, 06_Azure_DevOps, 07_Pruebas_y_Calidad, 08_Presentacion, 09_Evidencias, 10_Indice_Documentacion)
+Tipo: Documentación (DOCX, PDF, XLSX, PPTX, DRAWIO, PNG)
+Objetivo: Entregar la documentación académica y técnica de ServiX alineada con el código real.
+Contenido añadido: SRS, arquitectura y diseño, plan e informe de pruebas, 7 matrices en Excel, manuales de usuario, técnico e instalación, 11 diagramas, documentación de Firebase e IA, presentación y guion, índice y evidencias reales de Azure DevOps.
+Validaciones: apertura de cada archivo, fórmulas de Excel sin errores, validación estructural del PPTX y escaneo de secretos, correos, rutas locales y metadatos con 0 hallazgos.
+Resultado: Limitaciones declaradas: sin capturas de la app, sin pruebas en dispositivo, PNG de diagramas aproximados, TOC de los DOCX por actualizar en Word.
+Estado: COMPLETADO
+============================================================
