@@ -14,7 +14,7 @@ interface AuthRepository {
     val isUserLoggedIn: Boolean
 
     suspend fun signIn(email: String, password: String, requestedRole: UserRole? = null): AuthResult
-    suspend fun signUp(nombre: String, email: String, password: String, phone: String = "", role: UserRole = UserRole.ADMINISTRADOR): AuthResult
+    suspend fun signUp(nombre: String, email: String, password: String, phone: String = "", role: UserRole = UserRole.CLIENTE): AuthResult
     suspend fun signOut()
     suspend fun sendPasswordReset(email: String): Result<Unit>
     suspend fun signInAnonymously(): AuthResult

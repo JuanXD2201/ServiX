@@ -48,7 +48,7 @@ service cloud.firestore {
         allow read, write: if (isOwner(userId) || isAdmin())
           && subcollection in [
             'clientes', 'servicios', 'notificaciones',
-            'actividades', 'configuracion', 'mensajes', 'solicitudes'
+            'actividades', 'configuracion'
           ];
       }
     }

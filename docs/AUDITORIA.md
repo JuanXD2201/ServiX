@@ -24,6 +24,7 @@ Alcance: únicamente el proyecto ServiX. Metodología: inspección del repositor
 | H-17 | P1 | Si fallaba la lectura del rol, el usuario quedaba como `ADMINISTRADOR`; el DTO tenía `ADMINISTRADOR` por defecto | `FirebaseAuthRepository.kt`, `FirestoreDtos.kt` | **Corregido**: mínimo privilegio (`CLIENTE`) |
 | H-18 | P1 | En el inicio de sesión mandaba el rol elegido en pantalla, no el almacenado; un cliente veía la interfaz de administrador | `FirebaseAuthRepository.kt` | **Corregido**: el rol sale de la cuenta; si no coincide se rechaza el acceso |
 | H-19 | P1 | El listener de solicitudes se abría al construir el repositorio, antes del login; con reglas autenticadas habría fallado de forma permanente | `FirebaseAtencionRepository.kt` | **Corregido**: usa `AuthStateListener` |
+| H-20 | P2 | `SignUpUseCase`, `AuthRepository` y `AuthUser` tenían `ADMINISTRADOR` como rol por defecto | `AuthUseCases.kt`, `AuthRepository.kt`, `AuthUser.kt`, `MainViewModel.kt` | **Corregido**: el rol por defecto es `CLIENTE` (mínimo privilegio) |
 | H-16 | P3 | `.env.example` conserva la variable obsoleta `GEMINI_API_KEY` | `.env.example` | Pendiente |
 
 ## Acciones que requieren al propietario

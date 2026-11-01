@@ -6,6 +6,6 @@ data class AuthUser(
     val displayName: String,
     val phone: String = "",
     val photoUrl: String? = null,
-    val role: UserRole = UserRole.ADMINISTRADOR,
+    val role: UserRole = UserRole.CLIENTE,
     val createdAt: Long = System.currentTimeMillis()
 )
