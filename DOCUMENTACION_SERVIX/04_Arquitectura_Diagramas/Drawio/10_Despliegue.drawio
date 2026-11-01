@@ -1,1 +1,178 @@
-<mxfile host="app.diagrams.net"><diagram id="d1" name="Despliegue"><mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="600"><root><mxCell id="0"/><mxCell id="1" parent="0"/><mxCell id="2" value="ServiX · Diagrama de despliegue" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#FFFFFF;fontColor=#091E42;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="20" y="10" width="1060" height="34" as="geometry"/></mxCell><mxCell id="3" value="Dispositivo Android (API 26+)&lt;br&gt;&lt;br&gt;APK ServiX&lt;br&gt;Kotlin · Compose&lt;br&gt;Firebase SDK&lt;br&gt;OkHttp" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E0F2FE;strokeColor=#0066F5;fontColor=#0B1B36;fontSize=13;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="40" y="80" width="300" height="420" as="geometry"/></mxCell><mxCell id="4" value="Proyecto Firebase servix-453fb&lt;br&gt;&lt;br&gt;Authentication&lt;br&gt;Cloud Firestore (reglas desplegadas)&lt;br&gt;Firebase AI Logic (Gemini Developer API)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#0066F5;strokeColor=#0066F5;fontColor=#FFFFFF;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="460" y="70" width="300" height="250" as="geometry"/></mxCell><mxCell id="5" value="Make&lt;br&gt;Escenario con webhook" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#F59E0B;fontColor=#B45309;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="460" y="370" width="300" height="110" as="geometry"/></mxCell><mxCell id="6" value="Azure DevOps (org. Serivx)&lt;br&gt;Repos · Boards" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F0F7FF;strokeColor=#CBD5E1;fontColor=#0B1B36;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="840" y="70" width="230" height="120" as="geometry"/></mxCell><mxCell id="7" value="Agente ubuntu-latest&lt;br&gt;ServiX-CI" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#091E42;strokeColor=#091E42;fontColor=#FFFFFF;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="840" y="260" width="230" height="110" as="geometry"/></mxCell><mxCell id="8" value="Artefacto&lt;br&gt;servix-apk-debug" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#D1FAE5;strokeColor=#10B981;fontColor=#065F46;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="840" y="430" width="230" height="90" as="geometry"/></mxCell><mxCell id="10" value="HTTPS" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#0066F5;strokeWidth=1.6;fontSize=11;" edge="1" parent="1" source="3" target="4"><mxGeometry relative="1" as="geometry"/></mxCell><mxCell id="11" value="HTTPS (webhook)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#0066F5;strokeWidth=1.6;fontSize=11;" edge="1" parent="1" source="3" target="5"><mxGeometry relative="1" as="geometry"/></mxCell><mxCell id="12" value="dispara" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#0066F5;strokeWidth=1.6;fontSize=11;" edge="1" parent="1" source="6" target="7"><mxGeometry relative="1" as="geometry"/></mxCell><mxCell id="13" value="publica" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#0066F5;strokeWidth=1.6;fontSize=11;" edge="1" parent="1" source="7" target="8"><mxGeometry relative="1" as="geometry"/></mxCell></root></mxGraphModel></diagram></mxfile>
+<mxfile host="app.diagrams.net" agent="ServiX" version="24.7.0" type="device">
+  <diagram id="sx10" name="Diagrama de despliegue">
+    <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1040" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="hdr" value="" style="fillColor=#091E42;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1800" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="hdr2" value="" style="fillColor=#F59E0B;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="84" width="1800" height="4" as="geometry" />
+        </mxCell>
+        <mxCell id="ttl" value="Diagrama de despliegue" style="text;fontFamily=Arial;html=0;fontSize=26;align=left;verticalAlign=middle;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="14" width="1500" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="sub" value="Dispositivo Android, servicios en la nube, integración opcional y cadena de entrega en Azure DevOps" style="text;fontFamily=Arial;html=0;fontSize=13;align=left;verticalAlign=middle;fontColor=#BFDBFE;" vertex="1" parent="1">
+          <mxGeometry x="40" y="50" width="1500" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="brand" value="ServiX" style="text;fontFamily=Arial;html=0;fontSize=28;align=right;verticalAlign=middle;fontColor=#00A3FF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1560" y="22" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="frule" value="" style="shape=line;strokeColor=#CBD5E1;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="994" width="1720" height="2" as="geometry" />
+        </mxCell>
+        <mxCell id="foot" value="ServiX  |  Diagrama de despliegue  |  v1.0  |  2026-11-01" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1000" width="1500" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="pg" value="Diagrama 10 de 11" style="text;fontFamily=Arial;html=0;fontSize=12;align=right;verticalAlign=middle;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="1560" y="1000" width="200" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="fb" value="Google Firebase  «entorno en la nube»" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;swimlane;horizontal=1;startSize=34;fillColor=#E0F2FE;swimlaneFillColor=#F8FAFC;strokeColor=#0066F5;strokeWidth=1.5;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="120" width="560" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="auth" value="Firebase Authentication&#10;Correo y contraseña" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#E0F2FE;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="fb">
+          <mxGeometry x="30" y="50" width="500" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="fs" value="Cloud Firestore&#10;usuarios/{uid}/…  ·  solicitudes_atencion&#10;Reglas desplegadas: firestore.rules" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;shape=cylinder3;boundedLbl=1;size=12;fillColor=#E0F2FE;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="fb">
+          <mxGeometry x="30" y="138" width="500" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="ai" value="Firebase AI Logic  →  Gemini Developer API&#10;Modelo gemini-2.5-flash" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#E0F2FE;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="fb">
+          <mxGeometry x="30" y="252" width="500" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="make" value="Make (opcional)&#10;Escenario receptor del webhook HTTPS" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFBEB;strokeColor=#F59E0B;strokeWidth=2;dashed=1;dashPattern=6 4;" vertex="1" parent="1">
+          <mxGeometry x="760" y="120" width="340" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="res" value="Retell AI · n8n  (reservado)&#10;Sin despliegue ni implementación" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFFFF;strokeColor=#94A3B8;strokeWidth=1.5;dashed=1;dashPattern=3 3;fontColor=#64748B;" vertex="1" parent="1">
+          <mxGeometry x="760" y="250" width="340" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="dev" value="Dispositivo Android  «device»" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;swimlane;horizontal=1;startSize=34;fillColor=#E0F2FE;swimlaneFillColor=#F8FAFC;strokeColor=#0066F5;strokeWidth=1.5;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="120" width="400" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="apk" value="ServiX  (APK debug)&#10;com.example.servix" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#091E42;strokeColor=#091E42;strokeWidth=1.5;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="dev">
+          <mxGeometry x="20" y="50" width="360" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ui" value="Jetpack Compose · MainViewModel&#10;Casos de uso · repositorios" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFFFF;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="dev">
+          <mxGeometry x="20" y="135" width="360" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="sdk" value="SDK de Firebase · OkHttp&#10;(comunicación HTTPS)" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFFFF;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="dev">
+          <mxGeometry x="20" y="220" width="360" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="pc" value="Equipo de&#10;desarrollo&#10;Android Studio · Git" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#F1F5F9;strokeColor=#64748B;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="40" y="680" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="gh" value="GitHub&#10;Repositorio&#10;main · develop · feature/*" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#F1F5F9;strokeColor=#64748B;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="300" y="680" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="az" value="Azure DevOps  «servicio en la nube»" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;swimlane;horizontal=1;startSize=34;fillColor=#E2E8F0;swimlaneFillColor=#FFFFFF;strokeColor=#64748B;strokeWidth=1.5;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="600" y="620" width="1160" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="rp" value="Azure Repos&#10;main con política:&#10;1 revisor mínimo" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFFFF;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="az">
+          <mxGeometry x="30" y="60" width="230" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="pl" value="Azure Pipelines&#10;ServiX-CI&#10;(azure-pipelines.yml)" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFFFF;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="az">
+          <mxGeometry x="320" y="60" width="230" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ag" value="Agente alojado&#10;ubuntu-latest · JDK 21&#10;Android SDK 36.1 · Gradle" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#E0F2FE;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="az">
+          <mxGeometry x="610" y="60" width="230" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ar" value="Artefacto servix-apk-debug&#10;+ resultados de pruebas" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#DCFCE7;strokeColor=#15803D;strokeWidth=1.5;" vertex="1" parent="az">
+          <mxGeometry x="900" y="60" width="230" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="HTTPS · SDK de Firebase" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#0066F5;exitX=0;exitY=0.7;entryX=1;entryY=0.678788;startArrow=block;startFill=1;" edge="1" parent="1" source="dev" target="fb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="POST webhook&#10;(solo si hay URL)" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;dashed=1;dashPattern=6 4;strokeColor=#F59E0B;strokeWidth=2;exitX=0;exitY=0.15625;entryX=1;entryY=0.5;" edge="1" parent="1" source="dev" target="make">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="push" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="pc" target="gh">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="importación&#10;o push" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;exitX=1;exitY=0.5;entryX=0;entryY=0.477273;" edge="1" parent="1" source="gh" target="az">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="dispara" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="rp" target="pl">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="ejecuta" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="pl" target="ag">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="publica" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="ag" target="ar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="instalación manual&#10;del APK debug" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;strokeColor=#475569;exitX=0.521739;exitY=0;entryX=0.65;entryY=1;" edge="1" parent="1" source="ar" target="dev">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leg" value="" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFFFF;strokeColor=#CBD5E1;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="880" width="1720" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_t" value="Leyenda" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#475569;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="52" y="884" width="200" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_s0" value="" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#E0F2FE;strokeColor=#0066F5;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="54" y="917" width="34" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_x0" value="Servicio / entorno de ejecución" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="96" y="914" width="180" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_s1" value="" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#091E42;strokeColor=#091E42;strokeWidth=1.5;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="292" y="917" width="34" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_x1" value="Aplicación desplegada" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="334" y="914" width="137" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_s2" value="" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFBEB;strokeColor=#F59E0B;strokeWidth=2;dashed=1;dashPattern=6 4;" vertex="1" parent="1">
+          <mxGeometry x="487" y="917" width="34" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_x2" value="Integración opcional" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="529" y="914" width="123" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_s3" value="" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#FFFFFF;strokeColor=#94A3B8;strokeWidth=1.5;dashed=1;dashPattern=3 3;fontColor=#64748B;" vertex="1" parent="1">
+          <mxGeometry x="668" y="917" width="34" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_x3" value="Reservado (no implementado)" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="710" y="914" width="178" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_s4" value="" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#F1F5F9;strokeColor=#64748B;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="904" y="917" width="34" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_x4" value="Herramienta de desarrollo" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="946" y="914" width="155" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_s5" value="" style="fontFamily=Arial;fontSize=13;html=0;fontColor=#091E42;rounded=1;absoluteArcSize=1;arcSize=12;fillColor=#DCFCE7;strokeColor=#15803D;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="1117" y="917" width="34" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_x5" value="Artefacto publicado" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="1159" y="914" width="117" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_e6" value="" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#0066F5;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1292" y="926" as="sourcePoint" />
+            <mxPoint x="1336" y="926" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg_x6" value="Comunicación en ejecución" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="1344" y="914" width="164" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_e7" value="" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=block;endFill=1;strokeColor=#091E42;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1524" y="926" as="sourcePoint" />
+            <mxPoint x="1568" y="926" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg_x7" value="Flujo de entrega" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="1576" y="914" width="101" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_e8" value="" style="rounded=1;arcSize=16;html=0;fontFamily=Arial;fontSize=12;fontColor=#091E42;labelBackgroundColor=#FFFFFF;strokeWidth=1.5;exitPerimeter=0;entryPerimeter=0;endArrow=open;endFill=0;dashed=1;dashPattern=6 4;strokeColor=#475569;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="54" y="954" as="sourcePoint" />
+            <mxPoint x="98" y="954" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg_x8" value="Acción manual" style="text;fontFamily=Arial;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="106" y="942" width="93" height="24" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
