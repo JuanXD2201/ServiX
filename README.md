@@ -51,6 +51,8 @@ Integración opcional con Make: define `make.webhook.url=<URL del webhook>` en `
 
 ## Documentación
 
+La documentación académica completa (SRS, arquitectura, pruebas, matrices, manuales, diagramas y presentación) está en [DOCUMENTACION_SERVIX/](DOCUMENTACION_SERVIX/10_Indice_Documentacion/README.md).
+
 | Documento | Contenido |
 |---|---|
 | [docs/ARQUITECTURA.md](docs/ARQUITECTURA.md) | Capas, módulos, DI e integraciones |

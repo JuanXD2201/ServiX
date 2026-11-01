@@ -1,0 +1,77 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // --- Funciones auxiliares ---
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return isSignedIn() && request.auth.uid == uid;
+    }
+
+    // Rol almacenado en /usuarios/{uid}. Incluye roles heredados.
+    function isAdmin() {
+      return isSignedIn()
+        && exists(/databases/$(database)/documents/usuarios/$(request.auth.uid))
+        && get(/databases/$(database)/documents/usuarios/$(request.auth.uid)).data.role
+             in ['ADMINISTRADOR', 'ADMIN', 'VENDEDOR', 'ADMIN_VENDEDOR'];
+    }
+
+    function isValidRole(role) {
+      return role in ['CLIENTE', 'ADMINISTRADOR'];
+    }
+
+    function isShortString(value, maxLen) {
+      return value is string && value.size() <= maxLen;
+    }
+
+    // --- Perfil de usuario ---
+    match /usuarios/{userId} {
+      allow read: if isOwner(userId) || isAdmin();
+
+      // Autoregistro: solo el propio uid, con rol permitido.
+      allow create: if isOwner(userId)
+        && request.resource.data.role is string
+        && isValidRole(request.resource.data.role);
+
+      // El rol no puede cambiarse tras la creación (salvo por un admin).
+      allow update: if (isOwner(userId)
+          && request.resource.data.role == resource.data.role)
+        || isAdmin();
+
+      allow delete: if false;
+
+      // Subcolecciones por usuario (multi-tenant de ServiX).
+      match /{subcollection}/{docId} {
+        allow read, write: if (isOwner(userId) || isAdmin())
+          && subcollection in [
+            'clientes', 'servicios', 'notificaciones',
+            'actividades', 'configuracion', 'mensajes', 'solicitudes'
+          ];
+      }
+    }
+
+    // --- Solicitudes de atención (chat IA -> administrador) ---
+    match /solicitudes_atencion/{solicitudId} {
+      // Cada cliente solo ve sus solicitudes; el administrador ve todas.
+      allow read: if isAdmin()
+        || (isSignedIn() && resource.data.clienteId == request.auth.uid);
+
+      allow create: if isSignedIn()
+        && request.resource.data.clienteId == request.auth.uid
+        && isShortString(request.resource.data.clienteId, 128)
+        && isShortString(request.resource.data.clienteNombre, 200)
+        && isShortString(request.resource.data.motivo, 500)
+        && isShortString(request.resource.data.mensaje, 4000);
+
+      allow update, delete: if isAdmin();
+    }
+
+    // Todo lo demás (incluidas colecciones raíz heredadas): denegado.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
