@@ -338,7 +338,7 @@ fun AuthScreen(
                     AnimatedVisibility(visible = showDemoShortcuts) {
                         Column(modifier = Modifier.padding(top = 8.dp)) {
                             Text(
-                                text = "Selecciona un perfil para rellenar las credenciales al instante:",
+                                text = "Selecciona un perfil para rellenar el correo (solo debug):",
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant
                             )

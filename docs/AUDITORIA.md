@@ -9,8 +9,8 @@ Alcance: únicamente el proyecto ServiX. Metodología: inspección del repositor
 | H-01 | P0 | Reglas de Firestore abiertas: `\|\| true` en todas las reglas y comodín `/{document=**}` | `firestore.rules` | **Corregido y desplegado** |
 | H-02 | P0 | `GEMINI_API_KEY` empaquetada en el APK (`BuildConfig`) y enviada en la URL | `app/build.gradle.kts`, `GeminiAiChatRepository.kt` | **Corregido**: migrado a Firebase AI Logic |
 | H-03 | P0 | Respuestas predefinidas presentadas como respuestas de IA cuando fallaba la API | `GeminiAiChatRepository.kt` | **Corregido**: se devuelve error explícito |
-| H-04 | P0 | Credenciales `[contrasena-eliminada]` / `[contrasena-eliminada]` en `AuthScreen.kt`, divididas en dos cadenas | `ui/screens/AuthScreen.kt` | **Mitigado**: atajos solo en builds `debug` |
-| H-05 | P1 | URL del webhook de Make en el código fuente | `core/utils/MakeWebhookConfig.kt` | **Aceptado** para la entrega académica; ver riesgo en `ARQUITECTURA.md` |
+| H-04 | P0 | Contraseñas de cuentas demo y administrador escritas en `AuthScreen.kt`, divididas en dos cadenas | `ui/screens/AuthScreen.kt` | **Corregido**: se eliminaron las contraseñas del código; los atajos solo rellenan el correo y solo en builds `debug` |
+| H-05 | P1 | URL del webhook de Make en el código fuente | `core/utils/MakeWebhookConfig.kt` | **Corregido**: la URL se lee de `local.properties` (`make.webhook.url`) o de `MAKE_WEBHOOK_URL`; sin ella la integración queda desactivada. Persiste el riesgo de que quien tenga el APK pueda extraerla; para producción debe pasar por un backend |
 | H-06 | P1 | Faltaban `gradlew`, `gradlew.bat` y `gradle-wrapper.jar` | raíz | **Corregido** |
 | H-07 | P1 | `debug.keystore` inexistente y excluido de Git; la compilación debug fallaba en un equipo limpio | `app/build.gradle.kts` | **Corregido**: se usa la firma debug estándar de Android |
 | H-08 | P2 | 29 scripts `fix_*.py`, `split_*.py`, etc. generados por IA en la raíz | raíz | **Archivados** fuera del proyecto (`Servix_archivo_scripts_IA`) |
